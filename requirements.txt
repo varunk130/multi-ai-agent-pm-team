@@ -1,0 +1,14 @@
+# Multi AI Agent PM Team — Python Pipeline Dependencies
+# Built by Varun Kulkarni
+# All data is 100% synthetic. No real customer data. No API keys committed.
+anthropic>=0.40.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+rich>=13.0.0
+click>=8.0.0
+python-dotenv>=1.0.0
+structlog>=24.0.0
+pytest>=8.0.0
+pytest-asyncio>=0.24.0
+ruff>=0.5.0
+mypy>=1.10.0
