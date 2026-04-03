@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* ============================================
+   Theme Variables
+   ============================================ */
+:root {
+  --color-bg-primary: #0B1120;
+  --color-bg-secondary: #111827;
+  --color-bg-tertiary: #1E293B;
+  --color-bg-card: #111827;
+  --color-border: #1E293B;
+  --color-border-hover: #334155;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+
+  /* Agent color system */
+  --agent-1-color: #6366F1; /* indigo */
+  --agent-2-color: #06B6D4; /* cyan */
+  --agent-3-color: #F59E0B; /* amber */
+  --agent-4-color: #8B5CF6; /* purple */
+  --agent-5-color: #10B981; /* emerald */
+  --agent-6-color: #F43F5E; /* rose */
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flow-dot {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease-out;
+}
+
+/* ============================================
+   Agent Color Utilities
+   ============================================ */
+.agent-color-1 { color: var(--agent-1-color); }
+.agent-color-2 { color: var(--agent-2-color); }
+.agent-color-3 { color: var(--agent-3-color); }
+.agent-color-4 { color: var(--agent-4-color); }
+.agent-color-5 { color: var(--agent-5-color); }
+.agent-color-6 { color: var(--agent-6-color); }
+
+.agent-bg-1 { background-color: var(--agent-1-color); }
+.agent-bg-2 { background-color: var(--agent-2-color); }
+.agent-bg-3 { background-color: var(--agent-3-color); }
+.agent-bg-4 { background-color: var(--agent-4-color); }
+.agent-bg-5 { background-color: var(--agent-5-color); }
+.agent-bg-6 { background-color: var(--agent-6-color); }
+
+.agent-border-1 { border-color: var(--agent-1-color); }
+.agent-border-2 { border-color: var(--agent-2-color); }
+.agent-border-3 { border-color: var(--agent-3-color); }
+.agent-border-4 { border-color: var(--agent-4-color); }
+.agent-border-5 { border-color: var(--agent-5-color); }
+.agent-border-6 { border-color: var(--agent-6-color); }
+
+/* ============================================
+   Card Styles
+   ============================================ */
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+}
+
+.card-active {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+/* ============================================
+   Markdown Rendered Content
+   ============================================ */
+.markdown-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.markdown-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.markdown-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.markdown-content p {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.markdown-content strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.markdown-content code {
+  background: var(--color-bg-tertiary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #E879F9;
+}
+
+.markdown-content pre {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--color-text-secondary);
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid var(--agent-4-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.markdown-content th {
+  background: var(--color-bg-tertiary);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.markdown-content td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+}
