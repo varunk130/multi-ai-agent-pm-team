@@ -46,3 +46,11 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
