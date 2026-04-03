@@ -241,6 +241,16 @@ All data in this project is entirely synthetic and mock-generated for demonstrat
 
 ---
 
+## Contributors
+
+| Contributor | Role |
+|-------------|------|
+| **[Varun Kulkarni](https://github.com/varunk130)** | Creator, architect, maintainer |
+| **[Claude](https://claude.ai)** | AI contributor — agent design, code generation, pipeline architecture |
+| **[GitHub Copilot](https://github.com/features/copilot)** | AI pair programming and code assistance |
+
+---
+
 ## License
 
 [MIT](./LICENSE) © [Varun Kulkarni](https://github.com/varunk130)
