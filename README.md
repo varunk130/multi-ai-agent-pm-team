@@ -7,7 +7,7 @@
 [![GitHub Copilot](https://img.shields.io/badge/GitHub-Copilot_Ready-22272E)](https://github.com/features/copilot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Built by [Varun Kulkarni](https://github.com/varunk130)** · Works with Claude Code & GitHub Copilot
+**Built by [Varun Kulkarni](https://github.com/varunk130)** · Works with Claude Code & GitHub Copilot · [Contributing](./CONTRIBUTING.md)
 
 ---
 
