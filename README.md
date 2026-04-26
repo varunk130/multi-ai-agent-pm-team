@@ -1,6 +1,6 @@
 # ⚡ Multi AI Agent Product Team
 
-**A fully orchestrated 6-agent AI pipeline that transforms raw customer feedback into executive-ready strategy — PRDs, stakeholder comms, metrics dashboards, and data-driven recommendations — making AI Builders and AI Product Teams 10x faster.**
+**A fully orchestrated 6-agent AI pipeline that transforms raw customer feedback into executive-ready strategy — PRDs, stakeholder comms, metrics dashboards, and data-driven recommendations — making AI product teams 10x faster.**
 
 [![Claude](https://img.shields.io/badge/Powered_by-Claude-6366F1)](https://claude.ai)
 [![Built with Claude Code](https://img.shields.io/badge/Built_with-Claude_Code-6366F1)](https://claude.ai/code)
