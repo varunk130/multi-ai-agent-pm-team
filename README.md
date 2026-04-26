@@ -43,7 +43,7 @@ Each agent has a distinct cognitive role, receives upstream context, and produce
 ### What Makes This Interesting
 
 - **Sequential context accumulation**: Each agent operates on the *full upstream context* — not just the previous agent's output. Agent 4 (Chief of Staff) reasons over the combined output of Agents 1-3, enabling emergent strategic insights that no single agent could produce.
-- **Cognitive specialization over generic prompting**: Rather than one monolithic prompt, each agent has a focused cognitive role. Specialized sub-network agents outperform generalist ones on complex tasks.
+- **Cognitive specialization over generic prompting**: Rather than one monolithic prompt, each agent has a focused cognitive role. Focused, single-purpose agents consistently outperform generalist ones on complex reasoning tasks.
 - **Structured handoffs with typed contracts**: Agents don't pass raw text — they produce structured payloads (theme clusters with ARR impact, statistical correlations with confidence intervals, prioritized options with pre-mortem analysis) that downstream agents can reason over reliably.
 - **Audience-aware generation**: Agent 6 demonstrates that the same underlying information requires fundamentally different framing for different stakeholders — a problem that maps directly to alignment challenges around audience modeling.
 
