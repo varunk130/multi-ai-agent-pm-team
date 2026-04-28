@@ -54,3 +54,9 @@ __pycache__/
 *.egg
 .pytest_cache/
 .mypy_cache/
+
+# Local diagnostic / capture artifacts (keep out of repo)
+_screens/
+_capture.mjs
+_capture-readme.mjs
+_inspect.mjs

@@ -3,10 +3,8 @@
  */
 
 const VARIANTS = {
-  primary:
-    'bg-indigo-600 hover:bg-indigo-500 text-white disabled:bg-indigo-600/50',
-  secondary:
-    'bg-[#1E293B] hover:bg-[#334155] text-[#94A3B8] hover:text-[#F1F5F9] disabled:opacity-40',
+  primary: 'btn-primary text-white',
+  secondary: 'btn-secondary',
 };
 
 export function RunButton({
@@ -21,9 +19,9 @@ export function RunButton({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className={`inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed ${VARIANTS[variant] || VARIANTS.primary}`}
+      className={`inline-flex items-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold disabled:cursor-not-allowed ${VARIANTS[variant] || VARIANTS.primary}`}
     >
-      {Icon && <Icon className="h-4 w-4" />}
+      {Icon && <Icon className="h-3.5 w-3.5" />}
       {label}
     </button>
   );

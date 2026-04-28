@@ -8,11 +8,11 @@ export function TimerDisplay({ elapsed = 0, isRunning = false }) {
   const secs = String(elapsed % 60).padStart(2, '0');
 
   return (
-    <div className="flex items-center gap-1.5 rounded-lg bg-[#1E293B] px-3 py-1.5 font-mono text-sm">
+    <div className="flex items-center gap-1.5 rounded-lg border border-[#1A1F2E] bg-[#0E1117] px-2.5 py-1.5 font-mono text-xs">
       <Clock
-        className={`h-3.5 w-3.5 ${isRunning ? 'text-blue-400' : 'text-[#64748B]'}`}
+        className={`h-3.5 w-3.5 ${isRunning ? 'text-[#A78BFA]' : 'text-[#B4B4BB]'}`}
       />
-      <span className={isRunning ? 'text-[#F1F5F9]' : 'text-[#64748B]'}>
+      <span className={isRunning ? 'font-semibold text-[#F4F4F5]' : 'text-[#B4B4BB]'}>
         {mins}:{secs}
       </span>
     </div>

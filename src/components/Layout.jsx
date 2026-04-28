@@ -1,18 +1,18 @@
 /**
- * Layout — Responsive two-panel layout.
- * Left panel (~60%), right panel (~40%). Stacks vertically on small screens.
+ * Layout — Two-panel pipeline layout, contained, with proper card chrome.
  */
-
 export function Layout({ left, right }) {
   return (
-    <div className="flex flex-col lg:flex-row h-[calc(100vh-57px)]">
-      {/* Left panel — pipeline view */}
-      <div className="w-full lg:w-[60%] overflow-y-auto border-b border-[#1E293B] lg:border-b-0 lg:border-r">
-        {left}
-      </div>
-      {/* Right panel — agent detail */}
-      <div className="w-full lg:w-[40%] overflow-y-auto bg-[#111827]">
-        {right}
+    <div className="overflow-hidden rounded-2xl border border-[#1A1F2E] bg-[#0B0E16]/60 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] backdrop-blur">
+      <div className="flex flex-col lg:flex-row lg:min-h-[640px]">
+        {/* Left panel — pipeline */}
+        <div className="w-full border-b border-[#1A1F2E] lg:w-[58%] lg:border-b-0 lg:border-r">
+          {left}
+        </div>
+        {/* Right panel — agent detail */}
+        <div className="w-full bg-[#0A0D14] lg:w-[42%]">
+          {right}
+        </div>
       </div>
     </div>
   );

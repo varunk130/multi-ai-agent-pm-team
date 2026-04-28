@@ -7,16 +7,16 @@ export function AgentOutputTabs({ tabs = [], activeTab, onTabChange, children })
 
   return (
     <div>
-      <div className="flex gap-1 border-b border-[#1E293B] mb-4 overflow-x-auto">
+      <div className="mb-4 flex gap-1 overflow-x-auto border-b border-[#1A1F2E]">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => onTabChange(tab.id)}
-            className={`whitespace-nowrap px-3 py-2 text-sm font-medium transition-colors border-b-2 -mb-px ${
+            className={`-mb-px whitespace-nowrap border-b-2 px-3 py-2 text-xs font-semibold uppercase tracking-wide transition-colors ${
               activeTab === tab.id
-                ? 'border-[#F43F5E] text-[#F1F5F9]'
-                : 'border-transparent text-[#64748B] hover:text-[#94A3B8]'
+                ? 'border-[#A78BFA] text-[#F4F4F5]'
+                : 'border-transparent text-[#B4B4BB] hover:text-[#D1D5DB]'
             }`}
           >
             {tab.label}
