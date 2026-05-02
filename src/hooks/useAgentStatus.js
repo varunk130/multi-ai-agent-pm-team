@@ -26,6 +26,8 @@ export function useAgentStatus(agentConfig, agentState) {
         };
       case 'complete':
         return { label: 'Complete', dotColor: 'green', isActive: false, subStepText: 'Done' };
+      case 'error':
+        return { label: 'Error', dotColor: 'red', isActive: false, subStepText: 'Failed' };
       default:
         return { label: status, dotColor: 'gray', isActive: false, subStepText: null };
     }

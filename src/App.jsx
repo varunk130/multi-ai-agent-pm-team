@@ -128,6 +128,7 @@ export default function App() {
                 agent={selectedAgentData}
                 agentState={selectedAgent ? pipeline.agentStates[selectedAgent] : null}
                 agentOutput={selectedAgent ? pipeline.outputs[selectedAgent] : null}
+                agentError={selectedAgent ? pipeline.errors[selectedAgent] : null}
               />
             }
           />

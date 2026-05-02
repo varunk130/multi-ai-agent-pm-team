@@ -1,6 +1,6 @@
 /**
  * StatusDot — Colored dot indicating agent status.
- * gray=idle, yellow=waiting, blue=processing, green=complete.
+ * gray=idle, yellow=waiting, blue=processing, green=complete, red=error.
  */
 
 const STATUS_COLORS = {
@@ -8,6 +8,7 @@ const STATUS_COLORS = {
   waiting: 'bg-yellow-400',
   processing: 'bg-blue-500',
   complete: 'bg-emerald-500',
+  error: 'bg-red-500',
 };
 
 const SIZE_MAP = {

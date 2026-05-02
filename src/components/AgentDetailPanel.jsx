@@ -17,7 +17,7 @@ const STAKEHOLDER_TABS = [
   { id: 'sales', label: 'Sales' },
 ];
 
-export function AgentDetailPanel({ agent, agentState, agentOutput }) {
+export function AgentDetailPanel({ agent, agentState, agentOutput, agentError }) {
   const [activeTab, setActiveTab] = useState('engineering');
   const [copied, setCopied] = useState(false);
 
@@ -70,6 +70,7 @@ export function AgentDetailPanel({ agent, agentState, agentOutput }) {
   }
 
   const status = agentState?.status || 'idle';
+  const isStreaming = status === 'processing';
   const isStakeholderAgent = agent.id === 'stakeholder-translator';
   const hasTabbedOutput =
     isStakeholderAgent &&
@@ -150,24 +151,50 @@ export function AgentDetailPanel({ agent, agentState, agentOutput }) {
         {status === 'waiting' && (
           <p className="text-sm text-[#B4B4BB]">Waiting for upstream agents to complete…</p>
         )}
+        {status === 'error' && (
+          <div className="rounded-md border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-300">
+            <div className="font-semibold text-red-200">Agent failed</div>
+            <div className="mt-1 text-red-300/90">{agentError || 'An unknown error occurred.'}</div>
+            {displayContent && (
+              <div className="mt-2 text-xs text-red-300/70">
+                Partial output below was streamed before the failure.
+              </div>
+            )}
+          </div>
+        )}
         {status === 'processing' && !displayContent && (
           <div className="flex items-center gap-2 text-sm text-[#D1D5DB]">
             <div className="h-4 w-4 animate-spin rounded-full border-2 border-[#1A1F2E] border-t-[#A78BFA]" />
-            Processing…
+            Streaming output…
           </div>
         )}
         {displayContent && (
-          hasTabbedOutput ? (
-            <AgentOutputTabs
-              tabs={STAKEHOLDER_TABS}
-              activeTab={activeTab}
-              onTabChange={setActiveTab}
-            >
-              <MarkdownRenderer content={displayContent} />
-            </AgentOutputTabs>
-          ) : (
-            <MarkdownRenderer content={displayContent} />
-          )
+          <>
+            {isStreaming && (
+              <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wide text-[#A78BFA]">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#A78BFA] opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A78BFA]" />
+                </span>
+                Streaming · {agentState?.progress ?? 0}%
+              </div>
+            )}
+            {hasTabbedOutput ? (
+              <AgentOutputTabs
+                tabs={STAKEHOLDER_TABS}
+                activeTab={activeTab}
+                onTabChange={setActiveTab}
+              >
+                <MarkdownRenderer content={displayContent} />
+                {isStreaming && <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse bg-[#A78BFA] align-middle" />}
+              </AgentOutputTabs>
+            ) : (
+              <>
+                <MarkdownRenderer content={displayContent} />
+                {isStreaming && <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse bg-[#A78BFA] align-middle" />}
+              </>
+            )}
+          </>
         )}
       </div>
     </div>
