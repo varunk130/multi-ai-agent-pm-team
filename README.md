@@ -86,6 +86,10 @@ Open [http://localhost:5173](http://localhost:5173) to see the pipeline dashboar
 
 ---
 
+## Recent Changes
+
+- Streaming output mode landed (#8) — agent outputs now reveal progressively in lockstep with sub-step progress instead of dumping at completion.
+
 ## Architecture
 
 ```
