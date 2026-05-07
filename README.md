@@ -9,6 +9,8 @@
 
 **Built by [Varun Kulkarni](https://github.com/varunk130)** · Works with Claude Code & GitHub Copilot · [Contributing](./CONTRIBUTING.md)
 
+> All feedback, metrics, and agent outputs in this demo are 100% synthetic. No real customer data is used or required.
+
 ---
 
 ![Pipeline Running — 4 of 6 agents complete, Chief of Staff delivering strategic recommendation](./screenshots/agent-run.png)
