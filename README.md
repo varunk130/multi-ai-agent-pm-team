@@ -7,13 +7,24 @@
 [![GitHub Copilot](https://img.shields.io/badge/GitHub-Copilot_Ready-22272E)](https://github.com/features/copilot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Built by [Varun Kulkarni](https://github.com/varunk130)** · Works with Claude Code & GitHub Copilot · [Contributing](./CONTRIBUTING.md)
+**Built by [Varun Kulkarni](https://github.com/varunk130)** · Works with Claude Code & GitHub Copilot · [⚡ Quick Start ↓](#quick-start) · [The Pipeline ↓](#the-pipeline) · [Contributing](./CONTRIBUTING.md)
 
 > All feedback, metrics, and agent outputs in this demo are 100% synthetic. No real customer data is used or required.
 
 ---
 
 ![Pipeline Running — 4 of 6 agents complete, Chief of Staff delivering strategic recommendation](./screenshots/agent-run.png)
+
+## ⚡ TL;DR — Run the Demo
+
+```bash
+git clone https://github.com/varunk130/multi-ai-agent-pm-team.git
+cd multi-ai-agent-pm-team
+npm install && npm run dev
+# open http://localhost:5173
+```
+
+Full instructions, build commands, and platform-specific notes are in the [Quick Start](#quick-start) section below.
 
 ## Why This Exists
 
